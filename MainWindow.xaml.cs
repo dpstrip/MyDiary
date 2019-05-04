@@ -28,5 +28,10 @@ namespace MyDiary
             vp = new ViewPage();
             DataContext = vp;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine(vp.Title + ",  " + vp.Thought);
+        }
     }
 }

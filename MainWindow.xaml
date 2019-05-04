@@ -9,8 +9,9 @@
     <Grid>
         <Label Content="Title" HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" VerticalAlignment="Top" Width="56"/>
         <TextBox HorizontalAlignment="Left" Height="22" Margin="10,41,0,0" TextWrapping="Wrap" Text="{Binding Title, Mode=TwoWay}" VerticalAlignment="Top" Width="520"/>
-        <Calendar HorizontalAlignment="Left" Height="181" Margin="592,32,0,0" VerticalAlignment="Top" Width="193" AutomationProperties.LabeledBy="{Binding EntryDate, Mode=TwoWay, StringFormat=\{0:d\}}" SnapsToDevicePixels="True" SelectedDate="{Binding EntryDate, FallbackValue=datetime.now, Mode=TwoWay}" DisplayDate="{Binding EntryDate, Mode=TwoWay}"/>
+        <Calendar HorizontalAlignment="Left" Height="181" Margin="592,32,0,0" VerticalAlignment="Top" Width="193" AutomationProperties.LabeledBy="{Binding EntryDate, Mode=TwoWay, StringFormat=\{0:d\}}" SnapsToDevicePixels="True" SelectedDate="{Binding EntryDate, FallbackValue=datetime.now}" DisplayDate="{Binding EntryDate, Mode=TwoWay}"/>
         <TextBox HorizontalAlignment="Left" Height="285" Margin="22,105,0,0" TextWrapping="Wrap" Text="{Binding Thought}" VerticalAlignment="Top" Width="508" SpellCheck.IsEnabled="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AutoWordSelection="True" AcceptsReturn="True" AcceptsTab="True"/>
+        <Button Content="Save Entry" HorizontalAlignment="Left" Height="36" Margin="608,271,0,0" VerticalAlignment="Top" Width="128" Command="{Binding SaveTextCommand}" />
 
     </Grid>
 </Window>

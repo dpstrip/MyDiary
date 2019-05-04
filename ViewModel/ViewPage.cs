@@ -4,12 +4,15 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using MyDiary.Model;
 
 namespace MyDiary.ViewModel
 {
-    public class ViewPage : INotifyPropertyChanged
+    public class ViewPage : ObservableObject
     {
+        //I need to set up a list of page.
+        //
         private Page page;
 
         public ViewPage()
@@ -28,7 +31,7 @@ namespace MyDiary.ViewModel
                     if (page.title != value)
                     {
                         page.title = value;
-                        OnPropertyChange("Title");
+                        //OnPropertyChange("Title");
                     }
                 }
             }
@@ -40,7 +43,7 @@ namespace MyDiary.ViewModel
                     if (page.thought != value)
                     {
                         page.thought = value;
-                        OnPropertyChange("Thought");
+                        //OnPropertyChange("Thought");
 }
                 }
             }
@@ -58,6 +61,22 @@ namespace MyDiary.ViewModel
                 }
             }
         }
+        public ICommand SaveTextCommand
+        {
+            get { return new DelegateCommand(SaveText); }
+        }
+
+        
+
+        private void SelectedDate()
+        {
+            Console.WriteLine("A date was selected");
+        }
+
+        private void SaveText()
+        {
+            Console.WriteLine(this.Title + ",   " + this.Thought + ",  " + this.EntryDate);
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -66,6 +85,7 @@ namespace MyDiary.ViewModel
             if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                SelectedDate();
             }
         }
     }
