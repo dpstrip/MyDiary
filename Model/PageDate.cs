@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace MyDiary.Model
 {
-    public class Page
+    public class PageDate
     {
         public int id { get; set; }
-        public string title { get; set; }
-        public string thought { get; set; }
         public DateTime entryDate { get; set; }
+
     }
 }
