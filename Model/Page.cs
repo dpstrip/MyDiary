@@ -9,8 +9,8 @@ namespace MyDiary.Model
     public class Page
     {
         public int id { get; set; }
-        public string title { get; set; }
-        public string thought { get; set; }
-        public DateTime entryDate { get; set; }
+        public DateTime EntryDate { get; set; }
+        public string Title { get; set; }
+        public string Thought { get; set; }
     }
 }

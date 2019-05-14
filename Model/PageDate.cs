@@ -9,7 +9,7 @@ namespace MyDiary.Model
     public class PageDate
     {
         public int id { get; set; }
-        public DateTime entryDate { get; set; }
+        public DateTime EntryDate { get; set; }
 
     }
 }
