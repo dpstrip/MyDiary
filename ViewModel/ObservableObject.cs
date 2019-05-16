@@ -16,6 +16,8 @@ namespace MyDiary.ViewModel
             var handler = PropertyChanged;
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
+
+            Console.WriteLine("Here {0}", propertyName);
         }
     }
 }

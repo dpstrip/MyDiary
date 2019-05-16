@@ -28,6 +28,8 @@ namespace MyDiary
             InitializeComponent();
             vp = new ViewPage();
             DataContext = vp;
+            
+
             UpdateCalendarWithEntryDates();
         }
 
@@ -39,12 +41,12 @@ namespace MyDiary
                 foreach (PageDate pd in vp.ListOfDateEntry)
                     calendar.SelectedDates.Add(pd.EntryDate);
             }
+           
             
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine(vp.Title + ",  " + vp.Thought);
             if (calendar.SelectedDate == null)
             {
                 vp.EntryDate = DateTime.Today.Date;
@@ -56,6 +58,14 @@ namespace MyDiary
             vp.SaveText();
         }
 
-
+        private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //check if selected date has an page assotiated with it.
+            
+            Console.WriteLine("{0}", calendar.SelectedDate);
+            UpdateCalendarWithEntryDates();
+            DateTime dt = (DateTime)calendar.SelectedDate;
+            vp.CheckPageList(dt.Date);
+        }
     }
 }
