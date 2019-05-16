@@ -15,7 +15,7 @@ namespace MyDiary.Model
         public DiaryRepository()
         {
             //Add stuff for getting db out of app.config
-            string filename = "database.db";
+            string filename = System.Configuration.ConfigurationManager.ConnectionStrings["LiteDB"].ConnectionString;
             db = new LiteDatabase(filename);
             pageCollection = db.GetCollection<Page>("Pages");
         }

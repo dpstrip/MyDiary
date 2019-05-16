@@ -18,44 +18,44 @@ namespace MyDiary.ViewModel
         public ViewPage()
         {
             this.page = new Page();
-            this.page.title = "A thought";
-            this.page.thought = "A deep one";
-            this.page.entryDate = new DateTime(2019, 5, 15);
+            this.page.Title = "A thought";
+            this.page.Thought = "A deep one";
+            this.page.EntryDate = new DateTime(2019, 5, 15);
         }
 
         public string Title {
-            get { return page.title; }
+            get { return page.Title; }
             set
             {
                 {
-                    if (page.title != value)
+                    if (page.Title != value)
                     {
-                        page.title = value;
+                        page.Title = value;
                         //OnPropertyChange("Title");
                     }
                 }
             }
         }
         public string Thought {
-            get { return page.thought; }
+            get { return page.Thought; }
             set{
                 {
-                    if (page.thought != value)
+                    if (page.Thought != value)
                     {
-                        page.thought = value;
+                        page.Thought = value;
                         //OnPropertyChange("Thought");
 }
                 }
             }
         }
         public DateTime EntryDate {
-            get { return page.entryDate; }
+            get { return page.EntryDate; }
             set
             {
                 {
-                    if (page.entryDate != value)
+                    if (page.EntryDate != value)
                     {
-                        page.entryDate = value;
+                        page.EntryDate = value;
                         OnPropertyChange("EntryDate");
                     }
                 }
@@ -73,8 +73,9 @@ namespace MyDiary.ViewModel
             Console.WriteLine("A date was selected");
         }
 
-        private void SaveText()
+        public void SaveText()
         {
+            
             Console.WriteLine(this.Title + ",   " + this.Thought + ",  " + this.EntryDate);
         }
 

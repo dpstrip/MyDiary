@@ -32,6 +32,17 @@ namespace MyDiary
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine(vp.Title + ",  " + vp.Thought);
+            if (calendar.SelectedDate == null)
+            {
+                vp.EntryDate = DateTime.Today.Date;
+            }
+            else
+            {
+                vp.EntryDate = (DateTime)calendar.SelectedDate;
+            }
+            vp.SaveText();
         }
+
+
     }
 }
