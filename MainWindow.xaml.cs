@@ -1,4 +1,5 @@
-﻿using MyDiary.ViewModel;
+﻿using MyDiary.Model;
+using MyDiary.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,44 @@ namespace MyDiary
             InitializeComponent();
             vp = new ViewPage();
             DataContext = vp;
+            
+
+            UpdateCalendarWithEntryDates();
+        }
+
+        private void UpdateCalendarWithEntryDates()
+        {
+            calendar.SelectedDates.Add(DateTime.Today.Date);
+            if (vp.ListOfDateEntry != null)
+            {
+                foreach (PageDate pd in vp.ListOfDateEntry)
+                    calendar.SelectedDates.Add(pd.EntryDate);
+            }
+           
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (calendar.SelectedDate == null)
+            {
+                vp.EntryDate = DateTime.Today.Date;
+            }
+            else
+            {
+                vp.EntryDate = (DateTime)calendar.SelectedDate;
+            }
+            vp.SaveText();
+        }
+
+        private void Calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //check if selected date has an page assotiated with it.
+            
+            Console.WriteLine("{0}", calendar.SelectedDate);
+            UpdateCalendarWithEntryDates();
+            DateTime dt = (DateTime)calendar.SelectedDate;
+            vp.CheckPageList(dt.Date);
         }
     }
 }

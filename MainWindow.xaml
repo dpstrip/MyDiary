@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyDiary"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="My Diary" Height="450" Width="800">
     <Grid>
-        <Label Content="Title" HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" VerticalAlignment="Top" Width="56"/>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="10,41,0,0" TextWrapping="Wrap" Text="{Binding Title, Mode=TwoWay}" VerticalAlignment="Top" Width="520"/>
-        <Calendar HorizontalAlignment="Left" Height="181" Margin="592,32,0,0" VerticalAlignment="Top" Width="193" AutomationProperties.LabeledBy="{Binding EntryDate, Mode=TwoWay, StringFormat=\{0:d\}}" SnapsToDevicePixels="True" SelectedDate="{Binding EntryDate, FallbackValue=datetime.now, Mode=TwoWay}" DisplayDate="{Binding EntryDate, Mode=TwoWay}"/>
-        <TextBox HorizontalAlignment="Left" Height="285" Margin="22,105,0,0" TextWrapping="Wrap" Text="{Binding Thought}" VerticalAlignment="Top" Width="508" SpellCheck.IsEnabled="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AutoWordSelection="True" AcceptsReturn="True" AcceptsTab="True"/>
+
+        <TextBox Margin="10,41,265,32.5" TextWrapping="Wrap" Text="{Binding Thought, Mode=TwoWay}" SpellCheck.IsEnabled="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AutoWordSelection="True" AcceptsReturn="True" AcceptsTab="True"/>
+
+        <Label Content="Title" Height="26" Margin="0,19,196,0" VerticalAlignment="Top" FontWeight="Bold" HorizontalAlignment="Right" Width="56"/>
+        <TextBox Height="117" Margin="0,41,34,0" TextWrapping="Wrap" Text="{Binding Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" SpellCheck.IsEnabled="True" HorizontalAlignment="Right" Width="218"/>
+
+        <Button   x:Name="saveButton" Content="Save Entry" Height="36" Margin="0,355,34,0" VerticalAlignment="Top" Click="Button_Click" HorizontalAlignment="Right" Width="128" />
+        <Calendar x:Name="calendar" Margin="0,173,24,0" VerticalAlignment="Top" Height="182" SelectionMode="MultipleRange" SelectedDate="{Binding DateSelected}" SelectedDatesChanged="Calendar_SelectedDatesChanged" HorizontalAlignment="Right" Width="197"/>
 
     </Grid>
 </Window>
