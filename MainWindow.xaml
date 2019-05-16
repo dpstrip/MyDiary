@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Title" HorizontalAlignment="Left" Height="26" Margin="567,19,0,0" VerticalAlignment="Top" Width="56" FontWeight="Bold"/>
-        <TextBox HorizontalAlignment="Left" Height="108" Margin="567,50,0,0" TextWrapping="Wrap" Text="{Binding Title, Mode=TwoWay}" VerticalAlignment="Top" Width="218" SpellCheck.IsEnabled="True"/>
-        <TextBox HorizontalAlignment="Left" Height="305" Margin="10,85,0,0" TextWrapping="Wrap" Text="{Binding Thought}" VerticalAlignment="Top" Width="520" SpellCheck.IsEnabled="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AutoWordSelection="True" AcceptsReturn="True" AcceptsTab="True"/>
-        <Button x:Name="saveButton" Content="Save Entry" HorizontalAlignment="Left" Height="36" Margin="604,367,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click" />
-        <Calendar x:Name="calendar" HorizontalAlignment="Left" Margin="572,163,0,0" VerticalAlignment="Top" Height="182" Width="197"/>
+        <Label Content="Title" HorizontalAlignment="Left" Height="26" Margin="543,19,0,0" VerticalAlignment="Top" Width="56" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Height="108" Margin="543,50,0,0" TextWrapping="Wrap" Text="{Binding Title, Mode=TwoWay}" VerticalAlignment="Top" Width="218" SpellCheck.IsEnabled="True"/>
+        <TextBox HorizontalAlignment="Left" Height="349" Margin="10,41,0,0" TextWrapping="Wrap" Text="{Binding Thought}" VerticalAlignment="Top" Width="520" SpellCheck.IsEnabled="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AutoWordSelection="True" AcceptsReturn="True" AcceptsTab="True"/>
+        <Button x:Name="saveButton" Content="Save Entry" HorizontalAlignment="Left" Height="36" Margin="633,355,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click" />
+        <Calendar x:Name="calendar" HorizontalAlignment="Left" Margin="574,173,0,0" VerticalAlignment="Top" Height="182" Width="197" SelectionMode="MultipleRange"/>
 
     </Grid>
 </Window>

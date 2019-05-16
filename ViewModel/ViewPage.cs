@@ -14,6 +14,7 @@ namespace MyDiary.ViewModel
         //I need to set up a list of page.
         //
         private Page page;
+        private List<PageDate> listOfPages;
 
         public ViewPage()
         {
@@ -21,6 +22,30 @@ namespace MyDiary.ViewModel
             this.page.Title = "A thought";
             this.page.Thought = "A deep one";
             this.page.EntryDate = new DateTime(2019, 5, 15);
+
+            //Create list of pages to be placed on calendar
+            listOfPages = new List<PageDate>();
+            PageDate pd = new PageDate();
+            pd.EntryDate = new DateTime(2019, 5, 4);
+            pd.id = 1;
+            listOfPages.Add(pd);
+
+            PageDate pd1 = new PageDate();
+            pd1.EntryDate = new DateTime(2019, 5, 5);
+            pd1.id = 2;
+            listOfPages.Add(pd1);
+
+            PageDate pd2 = new PageDate();
+            pd2.EntryDate = new DateTime(2019, 5, 14);
+            pd2.id = 3;
+            listOfPages.Add(pd2);
+
+        }
+
+        public List<PageDate> ListOfDateEntry
+        {
+            get { return listOfPages; }
+            set { listOfPages = value; }
         }
 
         public string Title {
